@@ -29,6 +29,16 @@ This setup helps illustrate the thread-safety characteristics of these map imple
 
 ### Task 2 - Deadlocks
 
+- The <code>CollectionAnalyzer</code> class is designed to perform concurrent operations on a shared <code>ArrayList<Integer></code> collection 
+using multiple threads. Each thread performs a specific task: adding random numbers to the collection, 
+calculating the sum of the numbers, and calculating the square root of the sum of squares of the numbers.
+
+- Thread Safety: The use of synchronized on the shared collection ensures that only one thread can modify or read the collection at a time, 
+preventing data corruption and ensuring consistency.
+
+- Preventing from the deadlock: The <code>CollectionAnalyzer</code> class avoids deadlocks by using a single shared resource (collection) for synchronization, 
+ensuring that all threads lock and unlock this single object in a consistent and straightforward manner. 
+Each thread acquires the lock, performs its operation, and releases the lock promptly before sleeping, which minimizes lock contention and eliminates the conditions necessary for a deadlock.
 
 
 ### Task 3 - Where's your bus dude?
