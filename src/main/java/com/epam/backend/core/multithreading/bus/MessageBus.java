@@ -9,7 +9,7 @@ public class MessageBus {
     private final Map<String, Queue<Message>> queues = new HashMap<>();
 
     public synchronized void postMessage(Message message) {
-        String topic = message.getTopic();
+        var topic = message.getTopic();
         queues.putIfAbsent(topic, new LinkedList<>());
         queues.get(topic).offer(message);
         notifyAll();

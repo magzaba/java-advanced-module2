@@ -13,7 +13,7 @@ public class Consumer implements Runnable {
     public void run() {
         try {
             while (!Thread.currentThread().isInterrupted()) {
-                Message message = messageBus.consumeMessage(topic);
+                var message = messageBus.consumeMessage(topic);
                 System.out.println("Consumed: " + message.getPayload());
                 Thread.sleep(1000);
             }

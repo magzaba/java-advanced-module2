@@ -15,13 +15,13 @@ public class MessageBusTest {
 
     @Test
     public void testPostAndConsumeMessage() throws InterruptedException {
-        String topic = "testTopic";
-        String payload = "testPayload";
-        Message message = new Message(topic, payload);
+        var topic = "testTopic";
+        var payload = "testPayload";
+        var message = new Message(topic, payload);
 
-        Thread producer = new Thread(() -> messageBus.postMessage(message));
-        Thread consumer = new Thread(() -> {
-            Message consumedMessage = messageBus.consumeMessage(topic);
+        var producer = new Thread(() -> messageBus.postMessage(message));
+        var consumer = new Thread(() -> {
+            var consumedMessage = messageBus.consumeMessage(topic);
             Assert.assertEquals(consumedMessage.getPayload(), payload, "Payloads should match");
         });
 
@@ -34,20 +34,20 @@ public class MessageBusTest {
 
     @Test
     public void testMultipleProducersAndConsumers() throws InterruptedException {
-        String topic1 = "topic1";
-        String topic2 = "topic2";
+        var topic1 = "topic1";
+        var topic2 = "topic2";
 
-        Thread producer1 = new Thread(new Producer(messageBus, topic1));
-        Thread producer2 = new Thread(new Producer(messageBus, topic2));
-        Thread consumer1 = new Thread(() -> {
+        var producer1 = new Thread(new Producer(messageBus, topic1));
+        var producer2 = new Thread(new Producer(messageBus, topic2));
+        var consumer1 = new Thread(() -> {
             for (int i = 0; i < 5; i++) {
-                Message message = messageBus.consumeMessage(topic1);
+                var message = messageBus.consumeMessage(topic1);
                 Assert.assertNotNull(message, "Message should not be null");
             }
         });
-        Thread consumer2 = new Thread(() -> {
+        var consumer2 = new Thread(() -> {
             for (int i = 0; i < 5; i++) {
-                Message message = messageBus.consumeMessage(topic2);
+                var message = messageBus.consumeMessage(topic2);
                 Assert.assertNotNull(message, "Message should not be null");
             }
         });

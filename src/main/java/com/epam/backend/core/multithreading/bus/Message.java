@@ -23,7 +23,7 @@ public class Message {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Message message = (Message) o;
+        var message = (Message) o;
         return topic.equals(message.topic) && payload.equals(message.payload);
     }
 

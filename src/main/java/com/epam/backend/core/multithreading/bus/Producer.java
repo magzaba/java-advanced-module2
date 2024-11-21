@@ -13,8 +13,8 @@ public class Producer implements Runnable {
     public void run() {
         try {
             while (!Thread.currentThread().isInterrupted()) {
-                String payload = "Message " + Math.random();
-                Message message = new Message(topic, payload);
+                var payload = "Message " + Math.random();
+                var message = new Message(topic, payload);
                 messageBus.postMessage(message);
                 Thread.sleep(1000);
             }
