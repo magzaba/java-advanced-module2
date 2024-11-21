@@ -60,7 +60,8 @@ which sets up the message bus, starts multiple producers and consumers, and assi
 
 ### Task 4 - Blocking object pool
 
-
+Implementation of a simple object pool with support for multithreaded environment.
+For storing pooled objects <code>BlockingQueue</code> implementation was used.
 
 ### Task 5 - Currency Exchange application
 
