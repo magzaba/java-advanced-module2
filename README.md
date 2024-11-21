@@ -63,5 +63,14 @@ which sets up the message bus, starts multiple producers and consumers, and assi
 Implementation of a simple object pool with support for multithreaded environment.
 For storing pooled objects <code>BlockingQueue</code> implementation was used.
 
+
+
 ### Task 5 - Currency Exchange application
 
+
+-  Models: Account, Currency, and ExchangeRate are simple data classes.
+-  DAO: AccountDao handles file-based storage for accounts.
+-  Service Layer: AccountService performs the business logic of currency exchange, ensuring thread safety with a ReentrantLock.
+-  High-Level Module: ExchangeApp sets up the application, creates sample data, and simulates concurrent operations using ExecutorService.
+
+This application structure meets all the requirements, including thread safety, logging, custom exceptions, and input validation.
