@@ -21,4 +21,16 @@ public class ExchangeRate  implements Serializable {
     public BigDecimal convert(BigDecimal amount) {
         return amount.multiply(rate);
     }
+
+    public Currency getFrom() {
+        return from;
+    }
+
+    public Currency getTo() {
+        return to;
+    }
+
+    public BigDecimal getRate() {
+        return rate;
+    }
 }
