@@ -6,6 +6,8 @@ import java.math.RoundingMode;
 import java.util.Map;
 
 public class Account implements Serializable {
+
+    private static final long serialVersionUID = 1234567L;
     private final String accountId;
     private final Map<Currency, BigDecimal> balances;
 

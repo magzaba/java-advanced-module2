@@ -6,6 +6,8 @@ import java.math.BigDecimal;
 
 
 public class ExchangeRate  implements Serializable {
+
+    private static final long serialVersionUID = 3456789L;
     private final Currency from;
     private final Currency to;
     private final BigDecimal rate;
